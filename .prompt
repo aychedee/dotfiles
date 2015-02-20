@@ -78,7 +78,7 @@ End='\]' # End non printing escape
 
 function prompt_func() {
   branch_pattern="\* ([^$IFS]*)"
-  PS1="\n┌[ \! \A ] [ "
+  PS1="\n┌[ jobs: \j \! \A ] [ "
   if [ $(id -u) -eq 0 ]; # Are we root?
   then
     PS1+="$Beg$Red$End"
@@ -98,9 +98,9 @@ function prompt_func() {
       branch_color=""
       terminate=""
     fi
-    PS1+="[ $branch_color⎇  $branch$terminate ]"
+    PS1+="[ $branch_color⎇  $branch$terminate ] "
   fi
-  PS1+=" [ \w ]\n└> "
+  PS1+="[ \w ]\n└> "
 }
 echo 
 PROMPT_COMMAND=prompt_func
