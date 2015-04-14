@@ -86,6 +86,16 @@ function prompt_func() {
     PS1+="$Beg$Green$End"
   fi
   PS1+="`whoami`@`hostname`$Color_Off ] " # Add user name and host
+  
+  # Add name of Python virtualenv if we're in one
+  if ! [ -z ${VIRTUAL_ENV+x} ]; then
+    PS1+="[ venv $Beg$IBlue$End›$VIRTUAL_ENV$terminate ] "; 
+  fi
+
+  # Tell us when we are in an ssh session...
+  if ! [ -z ${SSH_CLIENT+x} ]; then
+    PS1+="[ ssh $Beg$IYellow$End›$SSH_CLIENT$terminate ] "; 
+  fi
 
   # Add git branch if we're inside a repo
   if [[ "$(git branch --no-color 2> /dev/null)" =~ $branch_pattern ]]; then
