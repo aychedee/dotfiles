@@ -89,12 +89,12 @@ function prompt_func() {
   
   # Add name of Python virtualenv if we're in one
   if ! [ -z ${VIRTUAL_ENV+x} ]; then
-    PS1+="[ venv $Beg$IBlue$End›$VIRTUAL_ENV$terminate ] "; 
+    PS1+="[ venv $Beg$IBlue$End›$VIRTUAL_ENV$Color_Off ] ";
   fi
 
   # Tell us when we are in an ssh session...
   if ! [ -z ${SSH_CLIENT+x} ]; then
-    PS1+="[ ssh $Beg$IYellow$End›$SSH_CLIENT$terminate ] "; 
+    PS1+="[ ssh $Beg$IYellow$End›$SSH_CLIENT$Color_Off ] ";
   fi
 
   # Add git branch if we're inside a repo
