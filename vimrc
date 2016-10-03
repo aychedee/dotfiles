@@ -1,4 +1,28 @@
 set nocompatible                    " not compatible with legacy vi
+filetype off
+
+" Vundle setup
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" plugins from http://vim-scripts.org/vim/scripts.html
+Plugin 'pyflakes'
+Plugin 'pep8'
+Plugin 'rainbow_parentheses.vim'
+Plugin 'jshint.vim'
+Plugin 'ctrlp.vim'
+" plugins from github
+Plugin 'flazz/vim-colorschemes'
+Plugin 'chase/vim-ansible-yaml'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 set shortmess=atI                    " Disable splash screen
 
 " Use utf 8 encoding
@@ -265,4 +289,3 @@ filetype plugin indent on
 autocmd FileType go autocmd BufWritePre <buffer> GoFmt
 
 set clipboard=unnamedplus
-execute pathogen#infect()
