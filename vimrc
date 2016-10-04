@@ -10,8 +10,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " plugins from http://vim-scripts.org/vim/scripts.html
-Plugin 'pyflakes'
-Plugin 'pep8'
+Plugin 'syntastic'
 Plugin 'rainbow_parentheses.vim'
 Plugin 'jshint.vim'
 Plugin 'ctrlp.vim'
@@ -288,3 +287,6 @@ filetype plugin indent on
 autocmd FileType go autocmd BufWritePre <buffer> GoFmt
 
 set clipboard=unnamedplus
+
+" Syntastic settings
+let g:syntastic_python_checkers = ['flake8']

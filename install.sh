@@ -5,6 +5,8 @@ DOTFILES=(bashrc ctags gitconfig prompt  vim  vimrc)
 
 printf "\nInstalling packages...\n\n"
 
+sudo pip install flake8
+
 sudo apt-get -y -q install \
     python-dev \
     exuberant-ctags \
