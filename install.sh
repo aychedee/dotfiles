@@ -1,7 +1,21 @@
 #!/bin/bash
 
 WORKING_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-DOTFILES=(bashrc gitconfig prompt  vim  vimrc)
+DOTFILES=(bashrc ctags gitconfig prompt  vim  vimrc)
+
+printf "\nInstalling packages...\n\n"
+
+sudo apt-get -y -q install \
+    python-dev \
+    exuberant-ctags \
+    git \
+    ipython3 \
+    keepass2 \
+    python-pip \
+    python-pip-whl \
+    vim-gnome-py2
+
+printf "\nChecking dotfiles...\n\n"
 
 for FILE in "${DOTFILES[@]}"
 

@@ -75,8 +75,7 @@ map <C-l> <C-W>l
 
 " ctags ahoy
 "/usr/bin/ctags -R -o ~/.mytags .
-
-set tags=~/.mytags
+set tags=~/mytags
 
 " Strips trailing whitespace when saving Python & RST files
 autocmd BufWritePre *.py :%s/\s\+$//e
