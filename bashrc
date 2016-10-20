@@ -122,7 +122,15 @@ function settitle()
 
 function streetlife()
 {
-    cd ~/Projects/streetlife
+    if [ -d ~/Projects/streetlife ]; then
+        cd ~/Projects/streetlife/site
+        vim
+    elif [ -d ~/slife ]; then
+        cd ~/slife/site
+        vim
+    else
+        echo "Wrong machine, probably"
+    fi
 }
 
 function vpn()
