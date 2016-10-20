@@ -75,6 +75,7 @@ alias l1='ls -1'
 alias l='ls -CF'
 alias gg='git status -s'
 alias pytree='tree -I "*.pyc|__pycache__"'
+alias pyclean='find . -name \*.pyc -delete'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -135,7 +136,6 @@ function streetlife()
 
 function vpn()
 {
-    cd ~/Downloads
     sudo openvpn --config ~/.openvpn/client.ovpn --auth-user-pass ~/.openvpn/auth.txt
 }
 
