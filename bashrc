@@ -115,13 +115,34 @@ echo "${myip}"
 echo "---------------------------------------------------"
 }
 
-###### random Cyanide and Happiness comics from explosm.net
-function cyanide() { display "$(wget -q http://explosm.net/comics/random/ -O - | grep -Po 'http://www.explosm.net/db/files/Comics/*/[^"]+(png|jpg|jpeg)')"; }
-
-
 function settitle()
 {
     echo -ne "\033]0;$@\007"
+}
+
+function streetlife()
+{
+    cd ~/Projects/streetlife
+}
+
+function vpn()
+{
+    cd ~/Downloads
+    sudo openvpn --config ~/.openvpn/client.ovpn --auth-user-pass ~/.openvpn/auth.txt
+}
+
+function lock-screen()
+{
+    dbus-send --type=method_call --dest=org.gnome.ScreenSaver \
+        /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
+}
+
+function search()
+{
+    sudo ls -R / | awk '
+    /:$/&&f{s=$0;f=0}
+    /:$/&&!f{sub(/:$/,"");s=$0;f=1;next}
+    NF&&f{ print s"/"$0 }' | grep -i "$1"
 }
 
 

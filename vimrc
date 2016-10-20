@@ -17,6 +17,7 @@ Plugin 'ctrlp.vim'
 " plugins from github
 Plugin 'flazz/vim-colorschemes'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'lambdatoast/elm.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -186,6 +187,14 @@ map <F2> :bnext<CR>
 nmap <F6> ggO<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><CR>-----------------------<CR>
 imap <F6> <Esc>ggO<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><CR>-----------------------<CR>
 
+" Syntastic settings
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:statline_syntastic = 0
+
 
 " =====STATUS LINE OF DEATH!!=====
 set statusline=
@@ -212,6 +221,10 @@ set statusline+=%*
 "display a warning if files contains tab chars
 set statusline+=%#warningmsg#
 set statusline+=%{StatuslineTabWarning()}
+set statusline+=%*
+
+" Syntastic status parts
+set statusline+=%#warningmsg#
 set statusline+=%*
 
 " read-only
@@ -288,5 +301,3 @@ autocmd FileType go autocmd BufWritePre <buffer> GoFmt
 
 set clipboard=unnamedplus
 
-" Syntastic settings
-let g:syntastic_python_checkers = ['flake8']

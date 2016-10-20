@@ -5,9 +5,14 @@ DOTFILES=(bashrc ctags gitconfig prompt  vim  vimrc)
 
 printf "\nInstalling packages...\n\n"
 
+sudo add-apt-repository ppa:gnome-terminator
+sudo apt-get update
+sudo apt-get install terminator
+
 sudo pip install flake8
 
 sudo apt-get -y -q install \
+    terminator \
     python-dev \
     exuberant-ctags \
     git \
