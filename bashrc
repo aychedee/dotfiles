@@ -88,7 +88,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# Source my super duper uber prompt line
+# Source my prompt line
 . ~/.prompt
 
 
@@ -110,8 +110,8 @@ echo "--------------- Network Information ---------------"
 /sbin/ifconfig | awk /'Bcast/ {print $3}'
 /sbin/ifconfig | awk /'inet addr/ {print $4}'
 /sbin/ifconfig | awk /'HWaddr/ {print $4,$5}'
-myip=`lynx -dump -hiddenlinks=ignore -nolist http://checkip.dyndns.org:8245/ | sed '/^$/d; s/^[ ]*//g; s/[ ]*$//g' `
-echo "${myip}"
+myip=`wget -qO- ifconfig.co`
+echo "External IP: ${myip}"
 echo "---------------------------------------------------"
 }
 
