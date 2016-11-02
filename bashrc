@@ -124,7 +124,7 @@ function settitle()
 function streetlife()
 {
     if [ -d ~/Projects/streetlife ]; then
-        cd ~/Projects/streetlife/site
+        cd ~/Projects/streetlife/streetlife
         vim
     elif [ -d ~/slife ]; then
         cd ~/slife/site

@@ -15,6 +15,7 @@
     ui = auto
 
 [alias]
+    praise = blame
     st = status -sb
     standup = log --since '1 day ago' --no-merges --branches --author Hansel --date=relative --pretty=format':%Cgreen%cd%Creset \t%Cred%h%Creset %s'
     monday = log --since '3 day ago' --no-merges --branches --author Hansel --date=relative --pretty=format':%Cgreen%cd%Creset \t%Cred%h%Creset %s'
