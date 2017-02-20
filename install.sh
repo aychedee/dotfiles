@@ -22,6 +22,9 @@ sudo apt-get -y -q install \
     python-pip-whl \
     vim-gnome-py2
 
+printf "\nInstalling vundle for vim...\n\n"
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 printf "\nChecking dotfiles...\n\n"
 
 for FILE in "${DOTFILES[@]}"
