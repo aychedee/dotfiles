@@ -6,6 +6,8 @@ DOTFILES=(bashrc ctags gitconfig prompt  vim  vimrc)
 printf "\nInstalling packages...\n\n"
 
 sudo add-apt-repository ppa:gnome-terminator
+sudo add-apt-repository ppa:snwh/pulp
+sudo add-apt-repository ppa:tista/adapta
 sudo apt-get update
 sudo apt-get install terminator
 
@@ -14,6 +16,9 @@ sudo pip install flake8
 sudo apt-get -y -q install \
     terminator \
     python-dev \
+    adapta-gtk-theme \
+    gnome-tweak-tool \
+    paper-icon-theme \
     exuberant-ctags \
     git \
     ipython3 \
