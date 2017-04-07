@@ -5,6 +5,7 @@
 
 [push]
     default = current
+    followTags = true
 
 [color]
     diff = auto
@@ -16,6 +17,8 @@
 
 [alias]
     praise = blame
+    prune = fetch --prune
+    undo = reset --soft HEAD^
     st = status -sb
     standup = log --since '1 day ago' --no-merges --branches --author Hansel --date=relative --pretty=format':%Cgreen%cd%Creset \t%Cred%h%Creset %s'
     monday = log --since '3 day ago' --no-merges --branches --author Hansel --date=relative --pretty=format':%Cgreen%cd%Creset \t%Cred%h%Creset %s'
