@@ -145,6 +145,13 @@ function lock-screen()
         /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
 }
 
+function redshift()
+{
+    PGPASSWORD=$REDSHIFT_PASSWORD psql -h production-cluster.cdvjdjrwhppj.eu-west-1.redshift.amazonaws.com -U tsuser -d tsevents -p 5439
+}
+
+
+
 function search()
 {
     sudo ls -R / | awk '
