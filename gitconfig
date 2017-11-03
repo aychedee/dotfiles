@@ -21,6 +21,7 @@
     undo = reset --soft HEAD^
     st = status -sb
     standup = log --since '1 day ago' --no-merges --branches --author Hansel --date=relative --pretty=format':%Cgreen%cd%Creset \t%Cred%h%Creset %s'
+    sprint = log --since '14 day ago' --no-merges --branches --author Hansel --date=relative --pretty=format':%Cgreen%cd%Creset \t%Cred%h%Creset %s'
     monday = log --since '3 day ago' --no-merges --branches --author Hansel --date=relative --pretty=format':%Cgreen%cd%Creset \t%Cred%h%Creset %s'
     nuke = !git branch -d $1 && git push origin --delete $1
     unstage = reset HEAD
