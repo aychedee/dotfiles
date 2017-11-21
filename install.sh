@@ -20,12 +20,16 @@ sudo apt-get -y -q install \
     gnome-tweak-tool \
     paper-icon-theme \
     exuberant-ctags \
+    curl \
     git \
     ipython3 \
     keepass2 \
     python-pip \
     python-pip-whl \
     vim-gnome-py2
+
+curl https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb -O vagrant.deb
+sudo dpkg -i vagrant_2.0.1_x86_64.deb
 
 printf "\nInstalling vundle for vim...\n\n"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
