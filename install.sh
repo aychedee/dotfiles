@@ -86,3 +86,5 @@ do
 	fi
 
 done
+
+vim +PluginInstall
