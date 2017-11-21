@@ -21,6 +21,7 @@ sudo apt-get -y -q install \
     paper-icon-theme \
     exuberant-ctags \
     curl \
+    virtualbox \
     git \
     ipython3 \
     keepass2 \
