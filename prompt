@@ -89,7 +89,9 @@ function prompt_func() {
   
   # Add name of Python virtualenv if we're in one
   if ! [ -z ${VIRTUAL_ENV+x} ]; then
-    PS1+="[ venv $Beg$IBlue$End›$VIRTUAL_ENV$Color_Off ] ";
+    VENV=${VIRTUAL_ENV%-*_}
+    VENV=${VENV##*/}
+    PS1+="[ venv $Beg$IBlue$End$VENV$Color_Off ] ";
   fi
 
   # Tell us when we are in an ssh session...

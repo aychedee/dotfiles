@@ -5,11 +5,9 @@ DOTFILES=(bashrc ctags gitconfig prompt  vim  vimrc)
 
 printf "\nInstalling packages...\n\n"
 
-sudo add-apt-repository ppa:gnome-terminator
 sudo add-apt-repository ppa:snwh/pulp
 sudo add-apt-repository ppa:tista/adapta
 sudo apt-get update
-sudo apt-get install terminator
 
 sudo pip install flake8
 
@@ -17,9 +15,11 @@ sudo apt-get -y -q install \
     terminator \
     python-dev \
     adapta-gtk-theme \
+    vim-gtk3 \
     gnome-tweak-tool \
     paper-icon-theme \
     exuberant-ctags \
+    terminator \
     curl \
     virtualbox \
     git \
@@ -27,7 +27,6 @@ sudo apt-get -y -q install \
     keepass2 \
     python-pip \
     python-pip-whl \
-    vim-gnome-py2
 
 curl https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb -O vagrant.deb
 sudo dpkg -i vagrant_2.0.1_x86_64.deb
