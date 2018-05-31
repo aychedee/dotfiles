@@ -99,6 +99,11 @@ function prompt_func() {
     PS1+="[ ssh $Beg$IYellow$End›$SSH_CLIENT$Color_Off ] ";
   fi
 
+  # Show us the environment
+  if ! [ -z ${ENVIRONMENT+x} ]; then
+    PS1+="[ $Beg$IYellow$End$ENVIRONMENT$Color_Off ] ";
+  fi
+
   # Add git branch if we're inside a repo
   if [[ "$(git branch --no-color 2> /dev/null)" =~ $branch_pattern ]]; then
     branch="${BASH_REMATCH[1]}"

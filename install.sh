@@ -17,6 +17,7 @@ sudo apt-get -y -q install \
     adapta-gtk-theme \
     vim-gtk3 \
     gnome-tweak-tool \
+    gnome-session \
     paper-icon-theme \
     exuberant-ctags \
     terminator \
