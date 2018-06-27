@@ -15,6 +15,7 @@ Plugin 'rainbow_parentheses.vim'
 Plugin 'jshint.vim'
 Plugin 'ctrlp.vim'
 " plugins from github
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'lambdatoast/elm.vim'

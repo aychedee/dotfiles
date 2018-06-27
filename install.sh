@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WORKING_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-DOTFILES=(bashrc ctags gitconfig prompt  vim  vimrc)
+DOTFILES=(bashrc ctags gitconfig prompt vimrc)
 
 printf "\nInstalling packages...\n\n"
 
@@ -11,7 +11,11 @@ sudo apt-get update
 
 sudo pip install flake8
 
-sudo apt-get -y -q install \
+sudo apt -y -q install \
+    build-essential \
+    cmake \
+    python-dev \
+    python3-dev \
     terminator \
     python-dev \
     adapta-gtk-theme \
@@ -29,8 +33,9 @@ sudo apt-get -y -q install \
     python-pip \
     python-pip-whl \
 
-curl https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb -O vagrant.deb
-sudo dpkg -i vagrant_2.0.1_x86_64.deb
+
+curl https://releases.hashicorp.com/vagrant/2.1.2/vagrant_2.1.2_x86_64.deb -O vagrant.deb
+sudo dpkg -i vagrant.deb && rm vagrant.deb
 
 printf "\nInstalling vundle for vim...\n\n"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
