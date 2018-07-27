@@ -5,7 +5,7 @@ DOTFILES=(bashrc ctags gitconfig prompt vimrc)
 
 printf "\nInstalling packages...\n\n"
 
-sudo add-apt-repository ppa:snwh/pulp
+sudo add-apt-repository ppa:snwh/ppa
 sudo add-apt-repository ppa:tista/adapta
 sudo apt-get update
 
