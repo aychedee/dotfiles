@@ -302,3 +302,5 @@ autocmd FileType go autocmd BufWritePre <buffer> GoFmt
 
 set clipboard=unnamedplus
 
+" YouCompleteMe settings
+let g:ycm_autoclose_preview_window_after_insertion = 1

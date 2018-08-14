@@ -160,16 +160,16 @@ function search()
     NF&&f{ print s"/"$0 }' | grep -i "$1"
 }
 
-function android-simulation-starts()
+function platform()
 {
-    ts redshift --query \
-        "SELECT DATE_TRUNC('day', received), COUNT(received) FROM api_requests WHERE (received BETWEEN CURRENT_DATE - '32 days'::INTERVAL AND CURRENT_DATE) AND user_agent LIKE 'okhttp%' AND endpoint = 'api-v3:phase-detail' GROUP BY date_trunc ORDER BY date_trunc ASC;"
+    cd ~/platform
+    source ~/envs/ts/bin/activate
 }
 
-function ios-simulation-starts()
+function digitalsurgery()
 {
-    ts redshift --query \
-        "SELECT DATE_TRUNC('day', received), COUNT(received) FROM api_requests WHERE (received BETWEEN CURRENT_DATE - '32 days'::INTERVAL AND CURRENT_DATE) AND user_agent LIKE '%CFNetwork%' AND endpoint = 'api-v3:phase-detail' GROUP BY date_trunc ORDER BY date_trunc ASC;"
+    cd ~/digitalsurgery
+    source ~/envs/ds/bin/activate
 }
 
 # Of course we need to do this
