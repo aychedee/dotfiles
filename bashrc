@@ -147,10 +147,13 @@ function lock-screen()
 
 function redshift()
 {
-    PGPASSWORD=$REDSHIFT_PASSWORD psql -h production-cluster.cdvjdjrwhppj.eu-west-1.redshift.amazonaws.com -U tsuser -d tsevents -p 5439
+    PGPASSWORD=$REDSHIFT_PASSWORD psql -h $REDSHIFT_HOST -U $REDSHIFT_USER -d tsevents -p 5439
 }
 
-
+function production-db()
+{
+    PGPASSWORD=$PRODUCTION_DB_PASSWORD psql -h $DB_HOST -U $DB_USER -d ts_production
+}
 
 function search()
 {
