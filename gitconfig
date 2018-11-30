@@ -25,6 +25,7 @@
     monday = log --since '3 day ago' --no-merges --branches --author Hansel --date=relative --pretty=format':%Cgreen%cd%Creset \t%Cred%h%Creset %s'
     nuke = !git branch -d $1 && git push origin --delete $1
     unstage = reset HEAD
+    authors = shortlog -s -n --all --no-merges
     b = branch -v           # verbose branch
     co = checkout
     nb = checkout -b
@@ -45,6 +46,7 @@
     lglr= log   --graph '--format=%Cblue%h%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s' --boundary --left-right --cherry-pick
     # compact colorized git log
     com = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	quick-stats = ! /usr/local/bin/git-quick-stats
 
 [rerere]
     # Remember my merges 
@@ -81,3 +83,5 @@ color = true
 [lfs]
 	url = https://live.touchsurgery.com/api/v3/lfs
 	activitytimeout = 60
+[merge]
+    tool = vimdiff
