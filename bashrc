@@ -147,7 +147,7 @@ function lock-screen()
 
 function redshift()
 {
-    PGPASSWORD=$REDSHIFT_PASSWORD psql -h $REDSHIFT_HOST -U $REDSHIFT_USER -d tsevents -p 5439
+    PGPASSWORD=$REDSHIFT_PASSWORD psql -h $REDSHIFT_HOST -U $REDSHIFT_USER -d events -p 5439
 }
 
 function production-db()
@@ -166,6 +166,7 @@ function search()
 function platform()
 {
     cd ~/platform
+    aws_profile_touchsurgery
     source ~/envs/ts/bin/activate
 }
 
@@ -177,17 +178,13 @@ function digitalsurgery()
 
 # Of course we need to do this
 export EDITOR=vim
-export GOPATH=/home/hansel/Projects
 
 # Caps lock is another escape key! Wheee!
 setxkbmap -option caps:escape
+setxkbmap gb
 
 # Source any sensitive tokens/variables
 . ~/.sensitive
 
 # I don't need to cache these folders...
 PYTHONDONTWRITEBYTECODE=1
-
-# Add our go install to the path
-export PATH=$PATH:/usr/local/go/bin
-
