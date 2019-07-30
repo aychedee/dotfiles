@@ -20,6 +20,7 @@ sudo apt -y -q install \
     python-dev \
     adapta-gtk-theme \
     vim-gtk3 \
+    fonts-inconsolata \
     gnome-tweak-tool \
     gnome-session \
     paper-icon-theme \

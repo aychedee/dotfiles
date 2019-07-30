@@ -15,10 +15,11 @@ Plugin 'rainbow_parentheses.vim'
 Plugin 'jshint.vim'
 Plugin 'ctrlp.vim'
 " plugins from github
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'lambdatoast/elm.vim'
+Plugin 'fatih/vim-go'
+Plugin 'psf/black'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -81,6 +82,9 @@ set tags=~/mytags
 " Strips trailing whitespace when saving Python & RST files
 autocmd BufWritePre *.py :%s/\s\+$//e
 autocmd BufWritePre *.rst :%s/\s\+$//e
+
+" Formats python files using the black formatter
+autocmd BufWritePost *.py execute ':Black'
 
 syntax on
 filetype plugin indent on
@@ -283,8 +287,9 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " Some common typing errors
 abbr hte the
+abbr htem them
 abbr Hasnel Hansel
-abbr &shrug; ¯\_(ツ)_/¯
+abbr shrug; ¯\_(ツ)_/¯
 
 " Stop pyflakes overwriting my quickfix list every time!!!!
 let g:pyflakes_use_quickfix = 0
@@ -295,15 +300,7 @@ if exists("g:did_load_filetypes")
   filetype off
   filetype plugin indent off
 endif
-set runtimepath+=/usr/local/go/misc/vim/ " replace $GOROOT with the output of: go env GOROOT
 filetype on
 filetype plugin indent on
-autocmd FileType go autocmd BufWritePre <buffer> GoFmt
 
 set clipboard=unnamedplus
-
-" YouCompleteMe settings
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_complete_in_comments_and_strings = 1
-let g:ycm_complete_in_strings = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
