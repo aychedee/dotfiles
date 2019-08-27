@@ -166,7 +166,6 @@ function search()
 function platform()
 {
     cd ~/platform
-    aws_profile_touchsurgery
     source ~/envs/ts/bin/activate
 }
 
