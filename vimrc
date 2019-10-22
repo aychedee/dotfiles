@@ -137,9 +137,9 @@ set mouse=a
 " Stops vim beeping at you, flashes the screen instead
 set visualbell
 
-" Put a line on the 80 character marker
+" Put a line on the 89 character marker
 if exists('+colorcolumn')
-    set colorcolumn=80
+    set colorcolumn=89
 else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>120v.\+', -1)
 endif
